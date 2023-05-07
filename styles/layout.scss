@@ -33,4 +33,17 @@ a {
   }
 }
 
-
+form {
+  input {
+    border: 1.5px solid black;
+    border-radius: 1.1rem;
+    padding: 0.6rem;
+    width: 250px;
+    font-size: 1.5rem;
+  }
+  ::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    opacity: 1;
+  }
+}
