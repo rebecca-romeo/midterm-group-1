@@ -1,6 +1,36 @@
 // See: https://sass-lang.com/
+body {
+  font: 62.5%;
+}
 
 body,
-html {
+html,
+button,
+nav,
+ul,
+p,
+i,
+h1, h2, h3 {
   margin: 0;
+  padding: 0;
 }
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+.btn-primary {
+  background-color: #FAB005;
+  color: black;
+  &:hover {
+    background-color: #CAAF82;
+    color: black;
+  }
+}
+
+
