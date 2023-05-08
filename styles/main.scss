@@ -9,7 +9,7 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  background-image: linear-gradient(white, #f4d79a);
+  background-image: linear-gradient(white 50%, #f4d79a);
   // background: rgb(163, 208, 219);
   // background: linear-gradient(
   //   227deg,
@@ -30,7 +30,7 @@ h1 {
 
 #typewriter {
   position: absolute;
-  top: 40%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -64,26 +64,73 @@ h1 {
 
 .item_listings {
   display: flex;
-  flex-wrap: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-// const createItemComponent = (item) => {
-//   return $(`<article class="item_listing">
-//   <section class="item_listing_header">
-//     <i class="fa-regular fa-heart"></i>
-//     <img src="${item.photo}" alt="furniture">
-//   </section>
-//   <section class="item_listing_middle">
-//     <h3 class="item_price">$${item.price}</h3>
-//     <h3 class="item_sold">Sold</h3>
-//   </section>
-//   <section class="item_listing_footer">
-//     <div class="icons">
-//       <i class="fa-regular fa-location-dot"></i>
-//     </div>
-//     <div class="info">
-//       <h6 class="item_title">${item.title}</h6>
-//       <h6 class="item_location">${item.location_city}, ${item.location_province}</h6>
-//     </div>
-//   </section>
-//   </article>`)
+.item_listing:hover {
+  box-shadow: 10px 10px 10px $font-color;
+}
+
+.item_listing {
+  padding: 50px;
+  max-width: 350px;
+  margin: 50px;
+  background-color: #C8D35B;
+  border-radius: 40px;
+  .item_listing_header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    i {
+      color: $font-color;
+      position: absolute;
+      top: 10%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      font-size: 25px;
+    }
+    i:hover {
+      color: #A40808;
+    }
+    .img_container {
+      max-width: 250px;
+      max-height: 250px;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 10%;
+      }
+    }
+  }
+  .item_listing_middle {
+    display: flex;
+    flex-direction: row;
+  }
+  .item_listing_footer {
+    display: flex;
+    flex-direction: row;
+    .icons {
+      display: flex;
+      align-items: flex-end;
+      margin-right: 10px;
+      margin-bottom: 3px;
+      color: $font-color;
+    }
+    h5,h6 {
+      color: $font-color;
+      font-family: $font-family;
+    }
+    h5 {
+      font-size: x-large;
+      margin: 0;
+    }
+    h6 {
+      font-size: medium;
+      margin: 0;
+    }
+  }
+}
