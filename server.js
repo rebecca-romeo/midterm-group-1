@@ -55,7 +55,8 @@ app.use('/auth', authRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/home', (req, res) => {
-  res.render('index');
+  const templateVars = { user: req.session.user }
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

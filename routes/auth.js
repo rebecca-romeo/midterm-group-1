@@ -9,7 +9,8 @@ router.get('/login', (req, res) => {
     res.redirect('/home');
     return
   }
-  res.render('login')
+  const templateVars = { user: req.session.user }
+  res.render('login', templateVars)
 })
 
 
