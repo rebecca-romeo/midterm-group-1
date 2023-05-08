@@ -25,9 +25,25 @@ typed
 
 
 const createItemComponent = (item) => {
-  return $(`<span class="item_listing">
-  ${item.title}
-  </span>`)
+  return $(`<article class="item_listing">
+  <section class="item_listing_header">
+    <i class="fa-regular fa-heart"></i>
+    <img src="${item.photo}" alt="furniture">
+  </section>
+  <section class="item_listing_middle">
+    <h3 class="item_price">$${item.price}</h3>
+    <h3 class="item_sold">Sold</h3>
+  </section>
+  <section class="item_listing_footer">
+    <div class="icons">
+      <i class="fa-regular fa-location-dot"></i>
+    </div>
+    <div class="info">
+      <h6 class="item_title">${item.title}</h6>
+      <h6 class="item_location">${item.location_city}, ${item.location_province}</h6>
+    </div>
+  </section>
+  </article>`)
 
 }
 
