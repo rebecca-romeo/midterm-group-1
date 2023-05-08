@@ -22,3 +22,32 @@ typed
   .typeString("<div><img src='https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true'></img></div>")
   .pauseFor(5000)
   .start();
+
+
+const createItemComponent = (item) => {
+  return $(`<span class="item_listing">
+  ${item.title}
+  </span>`)
+
+}
+
+
+const renderFeaturedItems = (items) => {
+  for (item of items) {
+    const itemComponent = createItemComponent (item)
+    $(".item_listings").prepend(itemComponent)
+  }
+}
+
+$(document).ready(function () {
+  $.ajax({
+    method: "get",
+    url: "/items",
+    type: "application/json",
+    success: function(data) {
+      // console.log("server response value:", data.items)
+      const featuredItems = data.items
+      renderFeaturedItems(featuredItems);
+    }
+  })
+})
