@@ -1,4 +1,5 @@
 $font-family: 'Roboto', sans-serif;
+$font-title: 'Caveat', cursive;
 $font-color: #643F0C;
 
 body {
@@ -21,7 +22,32 @@ body {
   // );
 }
 
+h1 {
+  font-family: $font-family;
+  color: $font-color;
+  font-size: xxx-large;
+}
+
+#typewriter {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: $font-title;
+  font-size: 100px;
+  color: $font-color;
+  img {
+    max-width: 100%;
+    display: inline-block;
+    // vertical-align: -100px;
+    // margin-left: 10px;
+    padding-top: 180px;
+  }
+}
+
 .banner_container {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -32,14 +58,6 @@ body {
     height: 90%;
     object-fit: none;
     background-color: #859F38;
+    opacity: 0.6;
   }
-}
-
-h2 {
-  font-family: $font-family;
-  color: $font-color;
-}
-
-#typewriter {
-  // border: 10px solid black;
 }

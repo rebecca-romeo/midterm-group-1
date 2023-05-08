@@ -5,7 +5,8 @@ const typed = new Typewriter('#typewriter', {
   autoStart: true,
   // pauseFor: 1000,
   loop: true,
-  typeSpeed: 50
+  typeSpeed: 50,
+  cursor: ""
 });
 
 typed
@@ -15,9 +16,9 @@ typed
   .typeString("use")
   .pauseFor(1000)
   .deleteChars(3)
-  .typeString("<h2 style='color: red;'>furnish</h2>")
-  .pauseFor(1000)
-  .deleteChars(7)
-  .typeString("<p><img src='https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true'></img>")
-  .pauseFor(1000)
+  .typeString("furnish")
+  .pauseFor(2000)
+  .deleteChars(10)
+  .typeString("<div><img src='https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true'></img></div>")
+  .pauseFor(5000)
   .start();
