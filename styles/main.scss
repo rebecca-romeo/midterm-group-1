@@ -73,11 +73,14 @@ h1 {
 }
 
 .item_listing {
-  padding: 50px;
+  padding: 40px;
+  padding-bottom: 20px;
   max-width: 350px;
+  max-height: 500px;
   margin: 50px;
   background-color: #C8D35B;
   border-radius: 40px;
+  flex-basis: calc(33.33% - 100px);
   .item_listing_header {
     position: relative;
     display: flex;
@@ -86,7 +89,7 @@ h1 {
       color: $font-color;
       position: absolute;
       top: 10%;
-      left: 90%;
+      left: 85%;
       transform: translate(-50%, -50%);
       z-index: 1;
       font-size: 25px;
@@ -96,7 +99,7 @@ h1 {
     }
     .img_container {
       max-width: 250px;
-      max-height: 250px;
+      max-height: 350px;
       overflow: hidden;
       img {
         max-width: 100%;
@@ -109,6 +112,20 @@ h1 {
   .item_listing_middle {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    .item_price {
+      color: white;
+      font-size: x-large;
+      letter-spacing: 0.2rem;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      padding-right: 0.4em;
+      padding-left: 0.4em;
+      background-color: #A3663E;
+      border-radius: 10px;
+      margin: 0.5em;
+    }
   }
   .item_listing_footer {
     display: flex;
