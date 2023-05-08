@@ -43,12 +43,12 @@
     <div class="wrapper sign-in">
       <h3>Sign in to your account</h3>
 
-      <form action="/login" method="POST" class="login-form">
+      <form action="/login" method="POST" class="login-form" id="login-form">
         <label for="email"><b></b></label>
-        <input type="email" name="email" placeholder="Enter email">
+        <input type="email" name="email" placeholder="Enter email" id="email" required>
 
         <label for="password"><b></b></label>
-        <input type="password" name="password" placeholder="Enter Password">
+        <input type="password" name="password" placeholder="Enter Password" id="password" required>
 
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
