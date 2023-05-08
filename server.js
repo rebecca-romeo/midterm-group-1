@@ -36,8 +36,9 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-// const loginRoutes = require('./routes/login');
 const authRoutes = require('./routes/auth');
+const favoritesRoutes = require('./routes/favorites');
+const { getFavs } = require('./db/queries/favorites');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -45,14 +46,20 @@ const authRoutes = require('./routes/auth');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-// app.use('/login', loginRoutes);
 app.use('/auth', authRoutes);
+app.use('/favorites', favoritesRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+app.get('/supertest', (req, res) => {
+  getFavs()
+  .then(result => res.json(result))
+  .catch(err => res.json(err))
+});
 
 app.get('/home', (req, res) => {
   const templateVars = { user: req.session.user }
