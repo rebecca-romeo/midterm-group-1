@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -35,7 +37,23 @@
 
 <body>
   <%- include('partials/nav') %>
-  <h1>Have fun! 🥔</h1>
+    <header class="banner">
+      <h2 class="wrapper">Welcome Back!</h2>
+    </header>
+
+    <div class="wrapper sign-in">
+      <h3>Sign in to your account</h3>
+
+      <form action="/auth/login" method="POST" class="login-form" id="login-form">
+        <label for="email"><b></b></label>
+        <input type="email" name="email" placeholder="Enter email" id="email" required>
+
+        <label for="password"><b></b></label>
+        <input type="password" name="password" placeholder="Enter Password" id="password" required>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
 </body>
 
 </html>
