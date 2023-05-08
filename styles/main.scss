@@ -1,3 +1,6 @@
+$font-family: 'Roboto', sans-serif;
+$font-color: #643F0C;
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,14 +8,38 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+  background-image: linear-gradient(white, #f4d79a);
+  // background: rgb(163, 208, 219);
+  // background: linear-gradient(
+  //   227deg,
+  //   rgba(163, 208, 219, 1) 0%,
+  //   rgba(163, 176, 219, 1) 20%,
+  //   rgba(163, 173, 219, 1) 34%,
+  //   rgba(163, 219, 208, 1) 59%,
+  //   rgba(163, 208, 219, 1) 74%,
+  //   rgba(163, 208, 219, 1) 100%
+  // );
+}
+
+.banner_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  overflow: visible;
+  img {
+    width: 100%;
+    height: 90%;
+    object-fit: none;
+    background-color: #859F38;
+  }
+}
+
+h2 {
+  font-family: $font-family;
+  color: $font-color;
+}
+
+#typewriter {
+  // border: 10px solid black;
 }
