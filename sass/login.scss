@@ -1,0 +1,32 @@
+.banner {
+  background-image: url("/assets/banner.jpg");
+  height: 15rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  input {
+    width: 400px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  button {
+    width: 150px;
+    padding: 1rem;
+  }
+}
+
+.sign-in {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h3 {
+    color: #FAB005;
+  }
+}
