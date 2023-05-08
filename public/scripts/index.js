@@ -28,7 +28,9 @@ const createItemComponent = (item) => {
   return $(`<article class="item_listing">
   <section class="item_listing_header">
     <i class="fa-regular fa-heart"></i>
-    <img src="${item.photo}?raw=true" alt="furniture">
+    <div class="img_container">
+      <img src="${item.photo}?raw=true" alt="furniture">
+    </div>
   </section>
   <section class="item_listing_middle">
     <h3 class="item_price">$${item.price}</h3>
@@ -36,7 +38,7 @@ const createItemComponent = (item) => {
   </section>
   <section class="item_listing_footer">
     <div class="icons">
-      <i class="fa-regular fa-location-dot"></i>
+      <i class="fa-solid fa-location-dot"></i>
     </div>
     <div class="info">
       <h5 class="item_title">${item.title}</h5>
