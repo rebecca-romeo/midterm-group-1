@@ -1,0 +1,31 @@
+body {
+  font: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html,
+button,
+nav,
+ul,
+p,
+i,
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
