@@ -80,7 +80,6 @@ h1 {
   margin: 50px;
   background-color: #C8D35B;
   border-radius: 40px;
-  flex-basis: calc(33.33% - 100px);
   .item_listing_header {
     position: relative;
     display: flex;
@@ -99,12 +98,12 @@ h1 {
     }
     .img_container {
       max-width: 250px;
-      max-height: 350px;
+      max-height: 250px;
       overflow: hidden;
       img {
         max-width: 100%;
         max-height: 100%;
-        object-fit: cover;
+        object-fit: fill;
         border-radius: 10%;
       }
     }
@@ -149,5 +148,15 @@ h1 {
       font-size: medium;
       margin: 0;
     }
+  }
+}
+
+.sold_banner {
+  display: flex;
+  flex-direction: row;
+  .item_sold {
+    font-size: xx-large;
+    margin: 0.3em;
+    color: #A40808;
   }
 }
