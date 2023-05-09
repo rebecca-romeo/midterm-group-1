@@ -62,7 +62,11 @@
                 <h4><%= favorite.title %></h4>
               </div>
               <div class="favorited-true">
-                <i class="fa-solid fa-heart"></i>
+                <form method="POST" action="/favorites/<%= favorite.item_id %>/delete">
+                  <button class="heart-fav-button"><i class="fa-solid fa-heart"></i></button>
+                </form>
+
+
               </div>
             </div>
             <div class="item-location">
@@ -70,9 +74,7 @@
               <p><%= favorite.location_city %>, <%= favorite.location_province %></p>
             </div>
 
-            <form method="POST" action="/favorites/<%= favorite.item_id %>/delete">
-              <button class="btn delete-btn">Delete</button>
-            </form>
+
 
           </li>
         <% } %>
