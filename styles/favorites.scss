@@ -51,3 +51,13 @@
     transform: scale(1.2);
   }
 }
+
+.test {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h3 {
+    color: #FAB005;
+  }
+}
