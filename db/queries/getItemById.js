@@ -7,7 +7,6 @@ const getItemById = (id) => {
     FROM items
     WHERE id = $1`, [id])
     .then((result) => {
-      console.log("check item:", result)
       return result.rows[0];
     })
     .catch((err) => {

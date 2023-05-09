@@ -8,7 +8,6 @@ const getAllItems = () => {
     WHERE status_available = TRUE
     ORDER BY created_at`)
     .then((result) => {
-      console.log("check items:", result)
       return result.rows;
     })
     .catch((err) => {
