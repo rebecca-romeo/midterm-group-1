@@ -33,8 +33,7 @@ const createItemComponent = (item) => {
     </div>
   </section>
   <section class="item_listing_middle">
-    <h3 class="item_price">$${item.price}</h3>
-    <h3 class="item_sold">Sold</h3>
+  ${soldBanner(item.status_sold)}
   </section>
   <section class="item_listing_footer">
     <div class="icons">
@@ -49,11 +48,23 @@ const createItemComponent = (item) => {
 
 }
 
+const soldBanner = (status_sold) => {
+  if (status_sold) {
+    return `<div class="sold_banner">
+    <h3 class="item_price"><del>$${item.price}</del></h3>
+    <h3 class="item_sold">Sold</h3>
+  </div>`
+  } else {
+    return `<div class="unsold_banner">
+    <h3 class="item_price">$${item.price}</h3>
+  </div>`
+  }
+}
 
 const renderFeaturedItems = (items) => {
   for (item of items) {
-    const itemComponent = createItemComponent (item)
-    $(".item_listings").prepend(itemComponent)
+    const $itemComponent = createItemComponent(item)
+    $(".item_listings").prepend($itemComponent)
   }
 }
 
