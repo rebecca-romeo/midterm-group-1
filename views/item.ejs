@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Item Page</title>
+  <title>Item</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
-  <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/item.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -36,7 +36,17 @@
 </head>
 
 <body>
-    <h2>Hello, this is the items page</h2>
+
+    <header class="banner">
+    </header>
+    <h2>Hello, this is the items page
+      <%= item.title %>
+    </h2>
+
+    <section class="testing"></section>
+
+    <script type="text/javascript" src="/scripts/item.js"></script>
+
 </body>
 
 </html>
