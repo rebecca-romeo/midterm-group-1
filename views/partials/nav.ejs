@@ -11,6 +11,12 @@
 
 
     <div class="nav-icons-buttons-container">
+
+
+    <% if(user) { %>
+      <!-- If user's logged in:
+        * show the icons
+        * show the logout button -->
       <ul class="icons-container">
         <li><a href=""><i class="fa-solid fa-plus nav-icons"></i></a></li>
         <li><a href=""><i class="fa-solid fa-heart nav-icons"></i></a></li>
@@ -18,10 +24,17 @@
         <li><a href=""><i class="fa-solid fa-user nav-icons"></i></a></li>
       </ul>
 
-      <div class="nav-buttons">
-        <a href="/auth/login" class="btn btn-primary login">login</a>
-        <a href="/auth/logout" class="btn btn-primary logout">logout</a>
-      </div>
+      <a href="/auth/logout" class="btn btn-primary logout">logout</a>
+
+
+    <% } else { %>
+      <!-- If user's not logged in:
+         * show login button only-->
+      <a href="/auth/login" class="btn btn-primary login">login</a>
+    <% } %>
+
     </div>
   </div>
+
 </nav>
+
