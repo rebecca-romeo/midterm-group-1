@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Item</title>
+  <title><%= item.title %></title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/item.css" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true">
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -38,14 +40,32 @@
 <body>
 
     <header class="banner">
+      <h2>Item Details</h2>
     </header>
-    <h2>Hello, this is the items page
-      <%= item.title %>
-    </h2>
 
-    <section class="testing"></section>
+    <section class="item_box">
+      <div class="item_box_top">
+        <div class="item_box_image">
+          <img src="<%=item.photo%>?raw=true" alt="furniture">
+        </div>
+        <div class="item_info">
+          <h2> <%= item.title %></h2>
+          <h2> <%= item.price %></h2>
+          <h2> <%= item.location_city %></h2>
+          <h2> <%= item.location_province %></h2>
+          <h2> category: <%= item.category %></h2>
+          <h2> condition: <%= item.condition %></h2>
+        </div>
+      </div>
+      <div class="desc">
+        <h5> <%= item.description %></h5>
+      </div>
 
-    <script type="text/javascript" src="/scripts/item.js"></script>
+    </section>
+
+
+
+      <h2> <%= item.owner_id %></h2>
 
 </body>
 
