@@ -134,9 +134,12 @@ h1 {
     flex-direction: row;
     .icons {
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      // align-items: flex-end;
       margin-right: 10px;
-      margin-bottom: 3px;
+      // margin-bottom: 3px;
       color: $font-color;
     }
     h5,h6 {
