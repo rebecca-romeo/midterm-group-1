@@ -28,9 +28,7 @@ const createItemComponent = (item) => {
   return $(`<article class="item_listing">
   <section class="item_listing_header">
     <i class="fa-regular fa-heart"></i>
-    <div class="img_container">
-      <img src="${item.photo}?raw=true" alt="furniture">
-    </div>
+    ${imageOpacity(item.status_sold)}
   </section>
   <section class="item_listing_middle">
   ${soldBanner(item.status_sold)}
@@ -57,6 +55,18 @@ const soldBanner = (status_sold) => {
   } else {
     return `<div class="unsold_banner">
     <h3 class="item_price">$${item.price}</h3>
+  </div>`
+  }
+}
+
+const imageOpacity = (status_sold) => {
+  if (status_sold) {
+    return `<div class="img_container">
+    <img class="img_sold" src="${item.photo}?raw=true" alt="furniture">
+  </div>`
+  } else {
+    return `<div class="img_container">
+    <img src="${item.photo}?raw=true" alt="furniture">
   </div>`
   }
 }
