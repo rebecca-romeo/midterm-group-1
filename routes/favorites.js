@@ -9,6 +9,8 @@ router.get('/', (req, res) => {
     return;
   }
 
+  // DB is queried by calling the getFavs fn, returns data related to favorite items
+  // pass this data to templateVars to use in ejs
   getFavs()
     .then((favorites) => {
       const templateVars = { user: req.session.user, favorites };
@@ -18,6 +20,3 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
-// const favorites = res.json(result);
-// const templateVars = { user: req.session.user, favorites }
-// return res.render('favorites', templateVars)
