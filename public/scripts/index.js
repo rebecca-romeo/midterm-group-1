@@ -52,7 +52,7 @@ const soldBanner = (status_sold) => {
   if (status_sold) {
     return `<div class="sold_banner">
     <h3 class="item_price"><del>$${item.price}</del></h3>
-    <h3 class="item_sold">Sold</h3>
+    <h3 class="item_sold"><ins><em>SOLD</em></ins></h3>
   </div>`
   } else {
     return `<div class="unsold_banner">
