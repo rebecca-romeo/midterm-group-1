@@ -35,6 +35,7 @@ const createItemComponent = (item) => {
   </section>
   <section class="item_listing_footer">
     <div class="icons">
+      ${categoryIcon(item.category)}
       <i class="fa-solid fa-location-dot"></i>
     </div>
     <div class="info">
@@ -68,6 +69,22 @@ const imageOpacity = (status_sold) => {
     return `<div class="img_container">
     <img src="${item.photo}?raw=true" alt="furniture">
   </div>`
+  }
+}
+
+const categoryIcon = (category) => {
+  if (category === "office") {
+    return `<i class="fa-solid fa-desktop"></i>`
+  } else if (category === "living room") {
+    return `<i class="fa-solid fa-couch"></i>`
+  } else if (category === "bedroom") {
+    return `<i class="fa-solid fa-bed"></i>`
+  } else if (category === "dining room") {
+    return `<i class="fa-solid fa-utensils"></i>`
+  } else if (category === "outdoor") {
+    return `<i class="fa-solid fa-seedling"></i>`
+  } else {
+    return `<i class="fa-solid fa-lamp"></i>`
   }
 }
 
