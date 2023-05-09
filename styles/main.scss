@@ -111,8 +111,8 @@ h1 {
   .item_listing_middle {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+    justify-content: space-between;
     .item_price {
       color: white;
       font-size: x-large;
