@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Favorites</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/styles/global.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/favorites.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -43,9 +44,38 @@
     </header>
 
     <main class="wrapper">
+      <!--
+        loop through favorites array
+        -
+      -->
+
+      <ul class="item-list">
+
+        <% for(const favorite of favorites) { %>
+          <li class="individual-item">
+
+            <img src="<%= favorite.photo %>?raw=true" alt="" class="item-img">
+
+            <div class="item-info-container">
+              <div class="item-info">
+                <p class="btn btn-primary">$<%= favorite.price %></p>
+                <h4><%= favorite.title %></h4>
+              </div>
+              <div class="favorited-true">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+            <div class="item-location">
+              <i class="fa-solid fa-location-dot btn btn-primary"></i>
+              <p><%= favorite.location_city %>, <%= favorite.location_province %></p>
+            </div>
+          </li>
+        <% } %>
+
+      </ul>
 
     </main>
 
-  </body>
+</body>
 
 </html>
