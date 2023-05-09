@@ -69,8 +69,14 @@
               <i class="fa-solid fa-location-dot btn btn-primary"></i>
               <p><%= favorite.location_city %>, <%= favorite.location_province %></p>
             </div>
+
+            <form method="POST" action="/favorites/<%= favorite.item_id %>/delete">
+              <button class="btn delete-btn">Delete</button>
+            </form>
+
           </li>
         <% } %>
+
 
       </ul>
 
