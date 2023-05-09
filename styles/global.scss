@@ -1,6 +1,7 @@
 .btn-primary {
   background-color: #FAB005;
   color: black;
+
   &:hover {
     background-color: #CAAF82;
     color: black;
@@ -15,22 +16,23 @@ form {
     width: 250px;
     font-size: 1.5rem;
   }
-    ::placeholder {
-      font-size: 1.5rem;
-      color: black;
-      opacity: 1;
-    }
-  }
 
-  h3 {
-    padding: 2rem 0;
+  ::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    opacity: 1;
   }
+}
 
-  .banner {
-    background-image: url("/assets/banner.jpg");
-    height: 15rem;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-  }
+h3 {
+  padding: 2rem 0;
+}
+
+.banner {
+  background-image: url("/assets/banner.jpg");
+  height: 15rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
