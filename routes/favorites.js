@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
   // DB is queried by calling the getFavs fn, returns data related to favorite items
   // pass this data to templateVars to use in ejs
-  getFavs()
+  getFavs(user)
     .then((favorites) => {
       const templateVars = { user, favorites };
       res.render('favorites', templateVars);
