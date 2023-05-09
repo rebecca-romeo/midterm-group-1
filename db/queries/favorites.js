@@ -6,7 +6,7 @@ const getFavs = () => {
     FROM favorites
     JOIN items ON favorites.item_id = items.id
     JOIN users ON favorites.user_id = users.id
-    WHERE user_id = 1;
+    WHERE user_id = 3;
   `)
     .then(data => {
       return data.rows;
