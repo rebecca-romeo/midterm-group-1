@@ -45,33 +45,53 @@
 
     <section class="item_box">
       <div class="item_box_top">
-        <div class="item_box_image">
-          <img src="<%=item.photo%>?raw=true" alt="furniture">
+        <% if (item.status_sold){ %>
+          <div class="item_box_image_sold">
+            <img src="<%=item.photo%>?raw=true" alt="furniture">
         </div>
+        <% } else { %>
+          <div class="item_box_image">
+            <img src="<%=item.photo%>?raw=true" alt="furniture">
+          </div>
+        <% } %>
         <div class="item_info">
-          <h2> <%= item.title %></h2>
-          <h3> $ <%= item.price %></h2>
-          <h5> <%= item.location_city %>, <%= item.location_province %></h5>
-          <h4> Category: <%= item.category %></h4>
-          <h4> Condition: <%= item.condition %></h4>
-
-
+          <h1> <%= item.title %></h1>
+          <h2 class="item-price"> $ <%= item.price %></h2>
+          <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <h4> <%= item.location_city %>, <%= item.location_province %></h4>
+          </div>
+          <div class="category">
+            <% if (item.category === "office"){ %> <i class="fa-solid fa-desktop"></i>
+            <% } else if (item.category === "living room"){ %> <i class="fa-solid fa-couch"></i>
+            <% } else if (item.category === "bedroom"){ %> <i class="fa-solid fa-bed"></i>
+            <% } else if (item.category === "dining room"){ %> <i class="fa-solid fa-utensils"></i>
+            <% } else if (item.category === "outdoor"){ %> <i class="fa-solid fa-seedling"></i>
+            <% } else { %> <i class="fa-solid fa-lamp"></i>
+            <% } %>
+            <h4> Category: <%= item.category %></h4>
+          </div>
+          <h4 class="condition"> Condition: <%= item.condition %></h4>
+          <div class="seller">
+            <h3>message seller</h3>
+          </div>
+          <div class="sold">
+            <% if (item.status_sold){ %> <h2><ins><em>SOLD</em></ins></h2>
+              <% } %>
         </div>
+      </div>
+
       </div>
       <div class="desc">
-        <h5> <%= item.description %></h5>
+        <h4> <%= item.description %></h4>
+        <h5>Posted on: <%= item.created_at.toLocaleDateString() %></h5>
       </div>
-      <div class="seller">
-        <h3>message seller</h3>
-      </div>
+    </div>
 
     </section>
 
 
-
       <h2> <%= item.owner_id %></h2>
-
-
 
 </body>
 
