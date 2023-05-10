@@ -25,7 +25,7 @@ typed
 
 
 const createItemComponent = (item) => {
-  return $(`<article onclick="fetchItem(item)" class="item_listing btn">
+  return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
     <i class="fa-regular fa-heart"></i>
     ${imageOpacity(item.status_sold)}
