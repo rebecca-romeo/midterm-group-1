@@ -3,7 +3,12 @@ const router  = express.Router();
 const { createSellListing } = require('../db/queries/sell');
 
 router.get('/', (req, res) => {
-  const templateVars = { user: req.session.user }
+  const user = req.session.user;
+  const templateVars = { user, title: 'Sell Items', msg: 'sell an item' }
+
+  if (!user) {
+    res.render('signed-out-err', templateVars)
+  }
 
   res.render('sell-item', templateVars)
 })

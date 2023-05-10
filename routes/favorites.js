@@ -4,9 +4,10 @@ const { getFavs, removeFav } = require('../db/queries/favorites');
 
 router.get('/', (req, res) => {
   const user = req.session.user;
-  // Check if the user is logged in
+  const templateVars = { user, title: 'Favorite Items', msg: 'view your favorites' }
+
   if (!user) {
-    return res.render('favs-signed-out-err', {user});
+    res.render('signed-out-err', templateVars)
   }
 
   // DB is queried by calling the getFavs fn, returns data related to favorite items
