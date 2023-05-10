@@ -21,7 +21,15 @@ const removeFav = (user, item_id) => {
 `, [user, item_id])
   }
 
-module.exports = { getFavs, removeFav };
+const addFav = (user, item_id) => {
+  return db.query(`
+  INSERT INTO favorites (user_id, item_id)
+  VALUES ((SELECT id FROM users where email = $1), $2)
+  `, [user, item_id]
+  );
+};
+
+module.exports = { getFavs, removeFav , addFav };
 
 
 
