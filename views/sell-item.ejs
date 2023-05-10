@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/styles/global.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/sell.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -52,6 +53,15 @@
         <label for="price"></label>
         <input type="number" name="price" placeholder="$0" id="price" min="0" required>
 
+        <label for="condition"></label>
+        <select name="condition" id="condition" class="condition">
+          <option autofocus disabled>Condition</option>
+          <option value="new">New</option>
+          <option value="used">Used</option>
+          <option value="good">Good</option>
+          <option value="poor">Poor</option>
+        </select>
+
         <label for="location-city"></label>
         <input type="text" name="location_city" placeholder="City" id="location-city" required>
 
@@ -62,15 +72,6 @@
           <option value="BC">British Columbia</option>
           <option value="AB">Alberta</option>
           <option value="QB">Quebec</option>
-        </select>
-
-        <label for="condition"></label>
-        <select name="condition" id="condition" class="condition">
-          <option autofocus disabled>Condition</option>
-          <option value="new">New</option>
-          <option value="used">Used</option>
-          <option value="good">Good</option>
-          <option value="poor">Poor</option>
         </select>
 
         <!-- <label for="image"></label>
