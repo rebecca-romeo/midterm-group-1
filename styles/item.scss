@@ -1,0 +1,41 @@
+$font-family: 'Roboto', sans-serif;
+$font-title: 'Caveat', cursive;
+$font-color: #643F0C;
+
+header {
+  font-family: $font-title;
+}
+body {
+  background-image: linear-gradient(white 50%, #f4d79a);
+}
+
+h2, h3, h4, h5 {
+  color: $font-color;
+}
+
+.item_box {
+  margin: 150px;
+  padding: 5rem;
+  background-color: #C8D35B;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  .item_box_top {
+    display: flex;
+    flex-direction: row;
+    .item_box_image {
+      img {
+      max-width: 500px;
+      border-radius: 10%;
+      }
+    }
+    .item_info {
+      margin-left: 40px;
+      margin-top: 20px;
+
+    }
+  }
+  .desc {
+    margin: 10px;
+  }
+}

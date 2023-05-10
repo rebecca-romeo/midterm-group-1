@@ -3,7 +3,7 @@ const db = require('../connection.js');
 const getAllItems = () => {
   return db
     .query(`
-    SELECT title, price, photo, location_city, location_province, category, status_sold
+    SELECT id, title, price, photo, location_city, location_province, category, status_sold
     FROM items
     WHERE status_available = TRUE
     ORDER BY created_at`)
