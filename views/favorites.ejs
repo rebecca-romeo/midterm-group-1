@@ -62,7 +62,7 @@
                 <h4><%= favorite.title %></h4>
               </div>
               <div class="favorited-true">
-                <form method="POST" action="/favorites/<%= favorite.item_id %>/delete">
+                <form method="POST" action="/favorites/<%= favorite.item_id %>/delete" id="heart-delete">
                   <button class="heart-fav-button"><i class="fa-solid fa-heart"></i></button>
                 </form>
 
