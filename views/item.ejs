@@ -50,15 +50,19 @@
         </div>
         <div class="item_info">
           <h2> <%= item.title %></h2>
-          <h2> <%= item.price %></h2>
-          <h2> <%= item.location_city %></h2>
-          <h2> <%= item.location_province %></h2>
-          <h2> category: <%= item.category %></h2>
-          <h2> condition: <%= item.condition %></h2>
+          <h3> $ <%= item.price %></h2>
+          <h5> <%= item.location_city %>, <%= item.location_province %></h5>
+          <h4> Category: <%= item.category %></h4>
+          <h4> Condition: <%= item.condition %></h4>
+
+
         </div>
       </div>
       <div class="desc">
         <h5> <%= item.description %></h5>
+      </div>
+      <div class="seller">
+        <h3>message seller</h3>
       </div>
 
     </section>
@@ -66,6 +70,9 @@
 
 
       <h2> <%= item.owner_id %></h2>
+      <script src="https://cdn.jsdelivr.net/npm/timeago.js@latest/dist/timeago.min.js"></script>
+
+
 
 </body>
 
