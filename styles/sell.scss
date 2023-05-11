@@ -1,0 +1,22 @@
+.sell-item {
+  h3 {
+    color: #FAB005;
+  }
+
+}
+
+.sell-item-form {
+  input,
+  select {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    width: 30%;
+  }
+  #description {
+    height: 15rem;
+    width: 92%;
+    display: block;
+  }
+}
+
+
