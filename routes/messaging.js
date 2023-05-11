@@ -3,6 +3,8 @@ var sendmail = require('sendmail')({silent: true})
 const router  = express.Router();
 const { messageEmail } = require('../db/queries/messageEmail');
 
+//read the ItemId from requeste parameter, message from request body  and send email
+
 router.post('/:id', (req, res) => {
   const id = req.params.id;               // Item ID for the selected Item
   const { message } = req.body;           // Actual Message send to Seller

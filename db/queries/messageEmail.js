@@ -1,6 +1,7 @@
 const db = require('../connection.js');
 
-//To fetch the Seller Email ID for the intrested item
+//To fetch the Seller Email ID based on item ID
+//Getting the the owner_id from items tables based on itemID and joining the owner_id with users id to get seller email.
 const messageEmail = (id) => {
   return db
     .query(`
