@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Favorites</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/styles/global.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/favorites.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -39,22 +40,50 @@
 <body>
   <%- include('partials/nav') %>
     <header class="banner">
-      <h2 class="wrapper">Welcome Back!</h2>
+      <h2 class="wrapper">Favorite Items</h2>
     </header>
 
-    <div class="wrapper sign-in">
-      <h3>Sign in to your account</h3>
+    <main class="wrapper">
+      <!--
+        loop through favorites array
+        -
+      -->
 
-      <form action="/auth/login" method="POST" class="login-form" id="login-form">
-        <label for="email"><b></b></label>
-        <input type="email" name="email" placeholder="Enter email" id="email" required>
+      <ul class="item-list">
 
-        <label for="password"><b></b></label>
-        <input type="password" name="password" placeholder="Enter Password" id="password" required>
+        <% for(const favorite of favorites) { %>
+          <li class="individual-item">
 
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-    </div>
+            <img src="<%= favorite.photo %>?raw=true" alt="" class="item-img">
+
+            <div class="item-info-container">
+              <div class="item-info">
+                <p class="btn btn-primary">$<%= favorite.price %></p>
+                <h4><%= favorite.title %></h4>
+              </div>
+              <div class="favorited-true">
+                <form method="POST" action="/favorites/<%= favorite.item_id %>/delete" id="heart-delete">
+                  <button class="heart-fav-button"><i class="fa-solid fa-heart"></i></button>
+                </form>
+
+
+              </div>
+            </div>
+            <div class="item-location">
+              <i class="fa-solid fa-location-dot btn btn-primary"></i>
+              <p><%= favorite.location_city %>, <%= favorite.location_province %></p>
+            </div>
+
+
+
+          </li>
+        <% } %>
+
+
+      </ul>
+
+    </main>
+
 </body>
 
 </html>
