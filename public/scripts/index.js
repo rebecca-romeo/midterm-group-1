@@ -24,10 +24,10 @@ typed
   .start();
 
 
-const createItemComponent = (item) => {
+const createItemComponent = (item, itemsFavId) => {
   return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
-    <i class="fa-regular fa-heart"></i>
+    <i class="${itemsFavId?.includes(item.id) ? "fa-solid fa-heart heart-active" : "fa-regular fa-heart heart"}" data-id="${item.id}"></i>
     ${imageOpacity(item.status_sold)}
   </section>
   <section class="item_listing_middle">
@@ -88,9 +88,9 @@ const categoryIcon = (category) => {
   }
 }
 
-const renderFeaturedItems = (items) => {
+const renderFeaturedItems = (items, itemsFavId) => {
   for (item of items) {
-    const $itemComponent = createItemComponent(item)
+    const $itemComponent = createItemComponent(item, itemsFavId)
     $(".item_listings").prepend($itemComponent)
   }
 }
@@ -106,12 +106,9 @@ document.getElementById('priceFilter').addEventListener('submit', function(event
   const filteredList = filterPrice(minPrice, maxPrice, featuredItems);
   $(".item_listings").empty();
   renderFeaturedItems(filteredList);
-  //console.log(filteredList);
 });
 
 const filterPrice = (minPrice, maxPrice, items) => {
-  //console.log(minPrice);
- //console.log(maxPrice);
 
   let filteredList = items.filter(function(item) {
     return item.price >= minPrice && item.price <= maxPrice;
@@ -125,9 +122,40 @@ $(document).ready(function () {
     url: "/items",
     type: "application/json",
     success: function(data) {
-      // console.log("server response value:", data.items)
       featuredItems = data.items
-      renderFeaturedItems(featuredItems);
+      const itemsFavId = [];
+      if (data.itemsFav) {
+        for (const favs of data.itemsFav) {
+          itemsFavId.push(favs["item_id"]);
+        }
+
+      }
+      // get user from nav bar like const user = $('.')
+      // if user is there, replace 138 with user condition
+
+      renderFeaturedItems(featuredItems, itemsFavId);
+      if (itemsFavId && itemsFavId.length > 0) {
+        const heart = $('.heart');
+
+        heart.on("click", function(event) {
+          event.stopPropagation();
+          const heart = $(this);
+
+          if (!heart.hasClass('heart-active')) {
+            $.ajax({
+              method: "post",
+              url: `/favorites/add/${$(this).data().id}`,
+              type: "application/json",
+              success: function(data) {
+                heart.removeClass('heart')
+                heart.removeClass('fa-regular')
+                heart.addClass('fa-solid')
+                heart.addClass('heart-active')
+              }
+            })
+          }
+        })
+      }
     }
   })
 })
