@@ -106,12 +106,12 @@ document.getElementById('priceFilter').addEventListener('submit', function(event
   const filteredList = filterPrice(minPrice, maxPrice, featuredItems);
   $(".item_listings").empty();
   renderFeaturedItems(filteredList);
-  console.log(filteredList);
+  //console.log(filteredList);
 });
 
 const filterPrice = (minPrice, maxPrice, items) => {
-  console.log(minPrice);
-  console.log(maxPrice);
+  //console.log(minPrice);
+ //console.log(maxPrice);
 
   let filteredList = items.filter(function(item) {
     return item.price >= minPrice && item.price <= maxPrice;
