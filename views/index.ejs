@@ -59,23 +59,26 @@
 </head>
 
 <body>
-  <!-- banner -->
   <%- include('partials/nav') %>
-  <div class="banner_container">
-    <img src="https://www.asean-sourcing.com/wp-content/uploads/2022/03/spacejoy-ctyssSFmXmU-unsplash-1080x675.jpg" alt="Living room with white furniture and huge windows">
-  </div>
-  <div id="typewriter"></div>
 
-  <h1>Featured Items</h1>
-  <!-- main content here -->
-  <main class="items_container">
-    <section class="item_listings">
-    </section>
-  </main>
+    <header>
+      <div id="typewriter"></div>
+    </header>
+
+    <main class="wrapper home_page">
+      <h2>Featured Items</h2>
+
+      <div class="items_container">
+        <section class="item_listings">
+        </section>
+      </div>
+
+    </main>
+
+    <%- include('footer'); -%>
 
 
   <script type="text/javascript" src="/scripts/index.js"></script>
-    <%- include('footer'); -%>
 
 </body>
 
