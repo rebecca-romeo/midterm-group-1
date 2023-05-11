@@ -107,11 +107,15 @@ $(document).ready(function () {
       renderFeaturedItems(featuredItems);
 
       const heart = $('.heart');
-      // const heart = $('.heart')
         console.log("heart:", heart);
         heart.on("click", function(event) {
           event.stopPropagation();
-            // heart.classList.toggle('active');
+          const heart = $(this);
+          heart.toggleClass('active');
+          if (heart.hasClass('active')) {
+            heart.addClass('heart-active');
+            heart.html('<i class="fa-solid fa-heart"></i>');
+          }
           console.log("dataset", $(this).data())
           $.ajax({
             method: "post",
@@ -124,6 +128,4 @@ $(document).ready(function () {
       })
     }
   })
-
-
 })

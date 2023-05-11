@@ -168,3 +168,12 @@ h1 {
   }
 }
 
+.heart-active {
+  color: #A40808;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 35px;
+}
