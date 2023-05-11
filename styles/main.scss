@@ -4,54 +4,46 @@ $font-title: 'Caveat', cursive;
 $font-color: #643F0C;
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
   background-image: linear-gradient(white 50%, #f4d79a);
+}
+
+header {
+  background-image: url(https://images.unsplash.com/photo-1634547476021-c1155c01616c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80);
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   font-family: $font-family;
   color: $font-color;
-  font-size: xxx-large;
+  font-size: 30rem;
 }
 
 #typewriter {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
   font-family: $font-title;
-  font-size: 100px;
-  color: $font-color;
+  font-size: 10rem;
+  color: black;
   img {
-    max-width: 100%;
-    display: inline-block;
-    // vertical-align: -100px;
-    // margin-left: 10px;
     padding-top: 180px;
   }
 }
 
-.banner_container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 400px;
-  overflow: visible;
-  img {
-    width: 100%;
-    height: 90%;
-    object-fit: none;
-    background-color: #859F38;
-    opacity: 0.75;
-  }
+.home_page h2 {
+  font-size: 4rem;
+  color: $font-color;
+  padding-top: 2rem;
+  text-align: center;
 }
+
 
 .item_listings {
   display: flex;
@@ -161,7 +153,6 @@ h1 {
 .filter {
   color: #859F38;
   margin-top: 30px;
-  margin-right: 100rem;
   h4 {
     margin-bottom: 2rem;
   }
@@ -175,7 +166,7 @@ h1 {
       margin: 1rem;;
     }
     .form-input {
-      width: 60px;
+      width: 80px;
       outline: none;
       border: 1px solid #C8D35B;
     }
