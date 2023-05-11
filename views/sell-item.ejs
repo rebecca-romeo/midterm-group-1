@@ -48,10 +48,10 @@
 
       <form action="/sell/item" method="POST" class="sell-item-form" id="sell-item-form">
         <label for="title"></label>
-        <input type="text" name="title" placeholder="Title" id="title" required>
+        <input type="text" name="title" placeholder="Title" id="title">
 
         <label for="price"></label>
-        <input type="number" name="price" placeholder="$0" id="price" min="0" required>
+        <input type="number" name="price" placeholder="$0" id="price" min="0">
 
         <label for="condition"></label>
         <select name="condition" id="condition" class="condition">
@@ -63,7 +63,7 @@
         </select>
 
         <label for="location-city"></label>
-        <input type="text" name="location_city" placeholder="City" id="location-city" required>
+        <input type="text" name="location_city" placeholder="City" id="location-city">
 
         <label for="location-province"></label>
         <select name="location_province" id="location-province" class="location-province">
@@ -74,11 +74,11 @@
           <option value="QB">Quebec</option>
         </select>
 
-        <!-- <label for="image"></label>
-        <input type="image" name="image" id="image"> -->
+        <label for="photo"></label>
+        <input type="url" name="photo" id="photo" placeholder="image url">
 
         <label for="description"></label>
-        <input type="text" name="description" placeholder="description"  id="description" required>
+        <input type="text" name="description" placeholder="description"  id="description">
 
         <button type="submit" class="btn btn-primary">Sell Item</button>
       </form>
