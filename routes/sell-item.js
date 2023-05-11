@@ -22,7 +22,7 @@ router.post('/item', (req, res) => {
     console.log("checking email/id res", userId.rows[0].id);
     createSellListing(sellItem, userId.rows[0].id)
       .then((result) => {
-        res.redirect('/home');
+        res.redirect('/items/userItem');
       })
     })
   .catch((err) => {
