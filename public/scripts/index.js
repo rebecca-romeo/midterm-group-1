@@ -95,6 +95,26 @@ const renderFeaturedItems = (items, itemsFavId) => {
   }
 }
 
+let featuredItems;
+
+document.getElementById('priceFilter').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let minPrice = parseInt(document.getElementById('minPrice').value);
+  let maxPrice = parseInt(document.getElementById('maxPrice').value);
+
+  const filteredList = filterPrice(minPrice, maxPrice, featuredItems);
+  $(".item_listings").empty();
+  renderFeaturedItems(filteredList);
+});
+
+const filterPrice = (minPrice, maxPrice, items) => {
+
+  let filteredList = items.filter(function(item) {
+    return item.price >= minPrice && item.price <= maxPrice;
+  })
+  return filteredList;
+}
 
 $(document).ready(function () {
   $.ajax({
@@ -102,7 +122,6 @@ $(document).ready(function () {
     url: "/items",
     type: "application/json",
     success: function(data) {
-      // console.log("server response value:", data.items)
       const featuredItems = data.items
       console.log(data.itemsFav);
       const itemsFavId = [];
@@ -130,7 +149,6 @@ $(document).ready(function () {
               }
             })
           }
-          console.log("clicked");
       })
     }
   })
