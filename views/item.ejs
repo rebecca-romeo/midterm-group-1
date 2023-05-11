@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/global.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/item.css" />
   <link rel="stylesheet" href="/styles/footer.css" />
@@ -39,12 +40,13 @@
 </head>
 
 <body>
+  <%- include('partials/nav'); -%>
 
-    <header class="banner">
-      <h2>Item Details</h2>
-    </header>
+  <header class="banner">
+    <h2 class="wrapper itemh2">Item Details</h2>
+  </header>
 
-    <section class="item_box">
+    <section class="item_box wrapper">
       <div class="item_box_top">
         <% if (item.status_sold){ %>
           <div class="item_box_image_sold">
@@ -93,7 +95,7 @@
 
 
       <h2> <%= item.owner_id %></h2>
-      
+
   <%- include('footer'); -%>
 </body>
 

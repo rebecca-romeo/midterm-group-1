@@ -16,6 +16,9 @@ nav {
     font-family: "Caveat", cursive;
     font-size: 3rem;
     margin-right: 1.5rem;
+    &:hover {
+      color: rgb(141, 169, 56);
+    }
   }
   .nav-icons {
     font-size: 2.5rem;
