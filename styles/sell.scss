@@ -6,14 +6,20 @@
 }
 
 .sell-item-form {
+  // display: flex;
+  // flex-wrap: wrap;
+
   input,
   select {
     padding: 1rem;
     margin-bottom: 1.5rem;
+    width: 30%;
   }
   #description {
     height: 15rem;
-    width: 80%;
+    width: 92%;
     display: block;
   }
 }
+
+
