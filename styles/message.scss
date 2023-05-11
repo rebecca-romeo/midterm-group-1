@@ -2,7 +2,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  padding: 5rem 0;
+  // height: 70vh;
 }
 
 .message-container {
@@ -15,7 +16,8 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 0 2rem 4rem;
-  margin-top: 15rem;
+  // align-items: center;
+  // margin-top: 15rem;
 }
 
 .individual-message {
