@@ -67,6 +67,35 @@
   <div id="typewriter"></div>
 
   <h1>Featured Items</h1>
+  <!-- Filter Feature -->
+  <div class="filter">
+    <h4>Filter Items By Price Range</h4>
+    <form  id="priceFilter" method="POST" action="">
+      <div class="filter-form">
+        <label for="minPrice">From</label>
+        <input
+          class="form-input"
+          type="number"
+          id="minPrice"
+          name="minPrice"
+          min="0"
+          placeholder="$"
+        />
+        <label for="maxPrice">to</label>
+        <input
+          class="form-input"
+          type="number"
+          id="maxPrice"
+          name="maxPrice"
+          min="0"
+          placeholder="$"
+        />
+      </div>
+      <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
+  </div>
+
+
   <!-- main content here -->
   <main class="items_container">
     <section class="item_listings">
