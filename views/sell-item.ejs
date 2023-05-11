@@ -48,13 +48,13 @@
 
       <form action="/sell/item" method="POST" class="sell-item-form" id="sell-item-form">
         <label for="title"></label>
-        <input type="text" name="title" placeholder="Title" id="title">
+        <input type="text" name="title" placeholder="Title" id="title" required>
 
         <label for="price"></label>
-        <input type="number" name="price" placeholder="$0" id="price" min="0">
+        <input type="number" name="price" placeholder="$0" id="price" min="0" required>
 
         <label for="condition"></label>
-        <select name="condition" id="condition" class="condition">
+        <select name="condition" id="condition" class="condition" required>
           <option autofocus disabled>Condition</option>
           <option value="new">New</option>
           <option value="used">Used</option>
@@ -63,10 +63,10 @@
         </select>
 
         <label for="location-city"></label>
-        <input type="text" name="location_city" placeholder="City" id="location-city">
+        <input type="text" name="location_city" placeholder="City" id="location-city" required>
 
         <label for="location-province"></label>
-        <select name="location_province" id="location-province" class="location-province">
+        <select name="location_province" id="location-province" class="location-province" required>
           <option autofocus disabled>Province</option>
           <option value="ON">Ontario</option>
           <option value="BC">British Columbia</option>
@@ -75,10 +75,10 @@
         </select>
 
         <label for="photo"></label>
-        <input type="url" name="photo" id="photo" placeholder="image url">
+        <input type="url" name="photo" id="photo" placeholder="Image URL" required>
 
         <label for="description"></label>
-        <input type="text" name="description" placeholder="description"  id="description">
+        <input type="text" name="description" placeholder="Description"  id="description" required>
 
         <button type="submit" class="btn btn-primary">Sell Item</button>
       </form>
