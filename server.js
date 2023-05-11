@@ -40,9 +40,9 @@ const authRoutes = require('./routes/auth');
 const favoritesRoutes = require('./routes/favorites');
 const sellItemRoute = require('./routes/sell-item');
 const { getFavs } = require('./db/queries/favorites');
-
 const itemRoutes = require('./routes/items');
 const itemPageRoutes = require('./routes/item');
+const messageRoutes = require('./routes/messaging');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -54,12 +54,9 @@ app.use('/auth', authRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/auth', authRoutes);
 app.use('/sell', sellItemRoute);
-
-
-
-
 app.use('/items', itemRoutes);
 app.use('/item', itemPageRoutes)
+app.use('/message', messageRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
