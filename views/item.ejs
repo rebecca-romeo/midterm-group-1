@@ -76,7 +76,7 @@
           </div>
           <h4 class="condition"> Condition: <%= item.condition %></h4>
           <div class="seller">
-            <h3>message seller</h3>
+            <a href="mailto:<%= item.email %>">Message Seller</a>
           </div>
           <div class="sold">
             <% if (item.status_sold){ %> <h2><ins><em>SOLD</em></ins></h2>
