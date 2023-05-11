@@ -10,16 +10,6 @@ body {
   min-height: 100vh;
 
   background-image: linear-gradient(white 50%, #f4d79a);
-  // background: rgb(163, 208, 219);
-  // background: linear-gradient(
-  //   227deg,
-  //   rgba(163, 208, 219, 1) 0%,
-  //   rgba(163, 176, 219, 1) 20%,
-  //   rgba(163, 173, 219, 1) 34%,
-  //   rgba(163, 219, 208, 1) 59%,
-  //   rgba(163, 208, 219, 1) 74%,
-  //   rgba(163, 208, 219, 1) 100%
-  // );
 }
 
 h1 {
@@ -164,5 +154,32 @@ h1 {
     font-size: xx-large;
     margin: 0.3em;
     color: #A40808;
+  }
+}
+
+.filter {
+  color: #859F38;
+  margin-top: 30px;
+  margin-right: 100rem;
+  h4 {
+    margin-bottom: 2rem;
+  }
+  #priceFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .filter-form {
+    label {
+      margin: 1rem;;
+    }
+    .form-input {
+      width: 60px;
+      outline: none;
+      border: 1px solid #C8D35B;
+    }
+  }
+  button {
+    margin: 1rem;
   }
 }
