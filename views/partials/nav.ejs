@@ -1,33 +1,35 @@
 <nav>
   <div class="wrapper">
+
     <div class="nav-logo-search-container">
+
       <a href="/home" class="logo">re-furnish</a>
-      <form action="" class="nav-search-form">
-        <label for="search"></label>
-        <input type="text" name="search" placeholder="Search">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
+      <% if(user) { %>
+        <p class="display-email"><%= user %></p>
+        <% } %>
+
+
     </div>
 
-
     <div class="nav-icons-buttons-container">
+      <div class="nav-icons-buttons-container">
+        <% if(user) { %>
+          <!-- If user's logged in:
+            * show the icons
+            * show the logout button -->
+          <ul class="icons-container">
+            <li><a href="/sell"><i class="fa-solid fa-plus nav-icons"></i></a></li>
+            <li><a href="/favorites"><i class="fa-solid fa-heart nav-icons"></i></a></li>
+            <!--<li><a href=""><i class="fa-solid fa-message nav-icons"></i></a></li>-->
+            <li><a href="/items/userItem"><i class="fa-solid fa-user nav-icons" title="<%= user %>"></i></a></li>
+          </ul>
+      </div>
 
-
-    <% if(user) { %>
-      <!-- If user's logged in:
-        * show the icons
-        * show the logout button -->
-      <ul class="icons-container">
-        <li><a href="/sell"><i class="fa-solid fa-plus nav-icons"></i></a></li>
-        <li><a href="/favorites"><i class="fa-solid fa-heart nav-icons"></i></a></li>
-        <!--<li><a href=""><i class="fa-solid fa-message nav-icons"></i></a></li>-->
-        <li><a href="/items/userItem"><i class="fa-solid fa-user nav-icons"></i></a></li>
-      </ul>
 
       <a href="/auth/logout" class="btn btn-primary logout">logout</a>
+    <% }%>
 
-
-    <% } else { %>
+    <% if (!user) { %>
       <!-- If user's not logged in:
          * show login button only-->
       <a href="/auth/login" class="btn btn-primary login">login</a>
@@ -37,4 +39,3 @@
   </div>
 
 </nav>
-

@@ -55,13 +55,18 @@ h1 {
   box-shadow: 10px 10px 10px $font-color;
 }
 
+main {
+  padding: 2rem 0 4rem;
+}
+
 .item_listing {
   padding: 40px;
   padding-bottom: 20px;
-  max-width: 350px;
+  min-width: 35rem;
+  width: 30%;
+  margin: 2rem 1rem;
   max-height: 500px;
-  margin: 50px;
-  background-color: #C8D35B;
+  background-color: rgba(163, 183, 105);
   border-radius: 40px;
   .item_listing_header {
     position: relative;
