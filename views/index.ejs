@@ -65,18 +65,48 @@
       <div id="typewriter"></div>
     </header>
 
-    <main class="wrapper home_page">
-      <h2>Featured Items</h2>
-
-      <div class="items_container">
-        <section class="item_listings">
-        </section>
+<main class="wrapper home_page">
+  <h2>Featured Items</h2>
+  <!-- Filter Feature -->
+  <div class="filter">
+    <h4>Filter Items By Price Range</h4>
+    <form  id="priceFilter" method="POST" action="">
+      <div class="filter-form">
+        <label for="minPrice">From</label>
+        <input
+          class="form-input"
+          type="number"
+          id="minPrice"
+          name="minPrice"
+          min="0"
+          placeholder="$"
+        />
+        <label for="maxPrice">to</label>
+        <input
+          class="form-input"
+          type="number"
+          id="maxPrice"
+          name="maxPrice"
+          min="0"
+          placeholder="$"
+        />
       </div>
+      <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
+  </div>
 
-    </main>
 
-    <%- include('footer'); -%>
 
+
+
+    <div class="items_container">
+      <section class="item_listings">
+      </section>
+    </div>
+
+  </main>
+
+  <%- include('footer'); -%>
 
   <script type="text/javascript" src="/scripts/index.js"></script>
 

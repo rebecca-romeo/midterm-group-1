@@ -150,3 +150,28 @@ h1 {
   }
 }
 
+.filter {
+  color: #859F38;
+  margin-top: 30px;
+  h4 {
+    margin-bottom: 2rem;
+  }
+  #priceFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .filter-form {
+    label {
+      margin: 1rem;;
+    }
+    .form-input {
+      width: 80px;
+      outline: none;
+      border: 1px solid #C8D35B;
+    }
+  }
+  button {
+    margin: 1rem;
+  }
+}
