@@ -7,7 +7,6 @@ router.get('/:id', (req, res) => {
   const user = req.session.user;
   getItemById(id)
   .then((item) => {
-    //console.log(item);
     const templateVars = {user, item:item}
     res.render('item', templateVars);
   })

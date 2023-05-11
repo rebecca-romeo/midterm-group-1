@@ -27,7 +27,7 @@ typed
 const createItemComponent = (item, itemsFavId) => {
   return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
-    <i class="${itemsFavId.includes(item.id) ? "fa-solid fa-heart heart-active" : "fa-regular fa-heart heart"}" data-id="${item.id}"></i>
+    <i class="${itemsFavId?.includes(item.id) ? "fa-solid fa-heart heart-active" : "fa-regular fa-heart heart"}" data-id="${item.id}"></i>
     ${imageOpacity(item.status_sold)}
   </section>
   <section class="item_listing_middle">
@@ -122,23 +122,17 @@ $(document).ready(function () {
     url: "/items",
     type: "application/json",
     success: function(data) {
-      const featuredItems = data.items
-      console.log(data.itemsFav);
+      featuredItems = data.items
       const itemsFavId = [];
       if (data.itemsFav) {
         for (const favs of data.itemsFav) {
           itemsFavId.push(favs["item_id"]);
         }
-      }
-      renderFeaturedItems(featuredItems, itemsFavId);
-
         const heart = $('.heart');
-        console.log("heart:", heart);
         heart.on("click", function(event) {
           event.stopPropagation();
           const heart = $(this);
           if (!heart.hasClass('heart-active')) {
-            console.log("dataset", $(this).data())
             $.ajax({
               method: "post",
               url: `/favorites/add/${$(this).data().id}`,
@@ -152,6 +146,9 @@ $(document).ready(function () {
             })
           }
         })
+      }
+      renderFeaturedItems(featuredItems, itemsFavId);
+
     }
   })
 })

@@ -9,15 +9,12 @@ const { markUnSold } = require('../db/queries/markUnSold');
 
 router.get('/', (req, res) => {
   const user = req.session.user;
-  const templateVars = { user, title: 'My Listing', msg: 'view your Listing Page' }
 
   // when user not logged in, they see featured items but they can't like items
-  console.log("im here")
   getAllItems()
   .then((items) => {
     if (!user) {
       res.json({items});
-      console.log(items);
       return;
     }
     getFavs(user)
