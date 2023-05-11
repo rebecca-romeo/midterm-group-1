@@ -125,12 +125,14 @@ $(document).ready(function () {
       const featuredItems = data.items
       console.log(data.itemsFav);
       const itemsFavId = [];
-      for (const favs of data.itemsFav) {
-        itemsFavId.push(favs["item_id"]);
+      if (data.itemsFav) {
+        for (const favs of data.itemsFav) {
+          itemsFavId.push(favs["item_id"]);
+        }
       }
       renderFeaturedItems(featuredItems, itemsFavId);
 
-      const heart = $('.heart');
+        const heart = $('.heart');
         console.log("heart:", heart);
         heart.on("click", function(event) {
           event.stopPropagation();
@@ -149,7 +151,7 @@ $(document).ready(function () {
               }
             })
           }
-      })
+        })
     }
   })
 })

@@ -11,10 +11,14 @@ router.get('/', (req, res) => {
   const user = req.session.user;
   const templateVars = { user, title: 'My Listing', msg: 'view your Listing Page' }
 
+  // when user not logged in, they see featured items but they can't like items
+  console.log("im here")
   getAllItems()
   .then((items) => {
     if (!user) {
-      return res.render('signed-out-err', templateVars);
+      res.json({items});
+      console.log(items);
+      return;
     }
     getFavs(user)
     .then((itemsFav) => {
