@@ -128,10 +128,20 @@ $(document).ready(function () {
         for (const favs of data.itemsFav) {
           itemsFavId.push(favs["item_id"]);
         }
+        debugger;
+
+      }
+      // get user from nav bar like const user = $('.')
+      // if user is there, replace 138 with user condition
+
+      renderFeaturedItems(featuredItems, itemsFavId);
+      if (itemsFavId && itemsFavId.length > 0) {
         const heart = $('.heart');
+
         heart.on("click", function(event) {
           event.stopPropagation();
           const heart = $(this);
+
           if (!heart.hasClass('heart-active')) {
             $.ajax({
               method: "post",
@@ -147,8 +157,6 @@ $(document).ready(function () {
           }
         })
       }
-      renderFeaturedItems(featuredItems, itemsFavId);
-
     }
   })
 })
