@@ -128,7 +128,6 @@ $(document).ready(function () {
         for (const favs of data.itemsFav) {
           itemsFavId.push(favs["item_id"]);
         }
-        debugger;
 
       }
       // get user from nav bar like const user = $('.')
