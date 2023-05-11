@@ -114,6 +114,7 @@ $(document).ready(function () {
           heart.toggleClass('active');
           if (heart.hasClass('active')) {
             heart.addClass('heart-active');
+            heart.removeClass('heart')
             heart.html('<i class="fa-solid fa-heart"></i>');
           }
           console.log("dataset", $(this).data())

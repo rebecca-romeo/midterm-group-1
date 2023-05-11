@@ -85,7 +85,7 @@ h1 {
     position: relative;
     display: flex;
     justify-content: center;
-    i {
+    .heart {
       color: $font-color;
       position: absolute;
       top: 10%;
@@ -94,7 +94,7 @@ h1 {
       z-index: 1;
       font-size: 35px;
     }
-    i:hover {
+    .heart:hover {
       color: #A40808;
     }
     .img_container {
