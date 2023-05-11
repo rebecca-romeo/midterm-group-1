@@ -39,7 +39,7 @@
 </head>
 
 <body>
-
+  <%- include('partials/nav') %>
     <header class="banner">
       <h2>Item Details</h2>
     </header>
@@ -74,7 +74,7 @@
           </div>
           <h4 class="condition"> Condition: <%= item.condition %></h4>
           <div class="seller">
-            <h3>message seller</h3>
+            <h3><a href="mailto:<%= item.email %>">Message Seller</a></h3>
           </div>
           <div class="sold">
             <% if (item.status_sold){ %> <h2><ins><em>SOLD</em></ins></h2>
@@ -91,9 +91,6 @@
 
     </section>
 
-
-      <h2> <%= item.owner_id %></h2>
-      
   <%- include('footer'); -%>
 </body>
 
