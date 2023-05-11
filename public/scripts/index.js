@@ -24,10 +24,10 @@ typed
   .start();
 
 
-const createItemComponent = (item) => {
+const createItemComponent = (item, itemsFavId) => {
   return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
-    <i class="fa-regular fa-heart heart" data-id="${item.id}"></i>
+    <i class="${itemsFavId.includes(item.id) ? "fa-solid fa-heart heart-active" : "fa-regular fa-heart heart"}" data-id="${item.id}"></i>
     ${imageOpacity(item.status_sold)}
   </section>
   <section class="item_listing_middle">
@@ -88,9 +88,9 @@ const categoryIcon = (category) => {
   }
 }
 
-const renderFeaturedItems = (items) => {
+const renderFeaturedItems = (items, itemsFavId) => {
   for (item of items) {
-    const $itemComponent = createItemComponent(item)
+    const $itemComponent = createItemComponent(item, itemsFavId)
     $(".item_listings").prepend($itemComponent)
   }
 }
@@ -104,27 +104,32 @@ $(document).ready(function () {
     success: function(data) {
       // console.log("server response value:", data.items)
       const featuredItems = data.items
-      renderFeaturedItems(featuredItems);
+      console.log(data.itemsFav);
+      const itemsFavId = [];
+      for (const favs of data.itemsFav) {
+        itemsFavId.push(favs["item_id"]);
+      }
+      renderFeaturedItems(featuredItems, itemsFavId);
 
       const heart = $('.heart');
         console.log("heart:", heart);
         heart.on("click", function(event) {
           event.stopPropagation();
           const heart = $(this);
-          heart.toggleClass('active');
-          if (heart.hasClass('active')) {
-            heart.addClass('heart-active');
-            heart.removeClass('heart')
-            heart.html('<i class="fa-solid fa-heart"></i>');
+          if (!heart.hasClass('heart-active')) {
+            console.log("dataset", $(this).data())
+            $.ajax({
+              method: "post",
+              url: `/favorites/add/${$(this).data().id}`,
+              type: "application/json",
+              success: function(data) {
+                heart.removeClass('heart')
+                heart.removeClass('fa-regular')
+                heart.addClass('fa-solid')
+                heart.addClass('heart-active')
+              }
+            })
           }
-          console.log("dataset", $(this).data())
-          $.ajax({
-            method: "post",
-            url: `/favorites/add/${$(this).data().id}`,
-            type: "application/json",
-            success: function(data) {
-            }
-          })
           console.log("clicked");
       })
     }

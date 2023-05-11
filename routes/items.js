@@ -1,15 +1,25 @@
 const express = require('express');
 const router  = express.Router();
 const { getAllItems } = require('../db/queries/getAllItems');
+const { getFavs } = require('../db/queries/favorites');
 const { userItems } = require('../db/queries/userItems');
 const { deleteItem } = require('../db/queries/deleteItem');
 const { markSold } = require('../db/queries/markSold');
 const { markUnSold } = require('../db/queries/markUnSold');
 
 router.get('/', (req, res) => {
+  const user = req.session.user;
+  const templateVars = { user, title: 'My Listing', msg: 'view your Listing Page' }
+
   getAllItems()
   .then((items) => {
-    res.json({items});
+    if (!user) {
+      return res.render('signed-out-err', templateVars);
+    }
+    getFavs(user)
+    .then((itemsFav) => {
+      res.json({items, itemsFav});
+    })
   })
   .catch((err) => {
     next(err);
