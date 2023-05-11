@@ -1,5 +1,4 @@
 const db = require('../connection');
-const { getUsers } = require('./users');
 
 const getUserIdFromEmail = (email) => {
   return db.query( `
@@ -27,6 +26,3 @@ const createSellListing = (sellItem, owner_id) => {
 };
 
 module.exports = { createSellListing, getUserIdFromEmail };
-
-
-
