@@ -27,7 +27,7 @@ typed
 const createItemComponent = (item) => {
   return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
-    <i class="fa-regular fa-heart"></i>
+    <i class="fa-regular fa-heart heart" data-id="${item.id}"></i>
     ${imageOpacity(item.status_sold)}
   </section>
   <section class="item_listing_middle">
@@ -95,6 +95,7 @@ const renderFeaturedItems = (items) => {
   }
 }
 
+
 $(document).ready(function () {
   $.ajax({
     method: "get",
@@ -104,6 +105,25 @@ $(document).ready(function () {
       // console.log("server response value:", data.items)
       const featuredItems = data.items
       renderFeaturedItems(featuredItems);
+
+      const heart = $('.heart');
+      // const heart = $('.heart')
+        console.log("heart:", heart);
+        heart.on("click", function(event) {
+          event.stopPropagation();
+            // heart.classList.toggle('active');
+          console.log("dataset", $(this).data())
+          $.ajax({
+            method: "post",
+            url: `/favorites/add/${$(this).data().id}`,
+            type: "application/json",
+            success: function(data) {
+            }
+          })
+          console.log("clicked");
+      })
     }
   })
+
+
 })
