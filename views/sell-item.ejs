@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/styles/global.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/sell.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -52,20 +53,8 @@
         <label for="price"></label>
         <input type="number" name="price" placeholder="$0" id="price" min="0" required>
 
-        <label for="location-city"></label>
-        <input type="text" name="location_city" placeholder="City" id="location-city" required>
-
-        <label for="location-province"></label>
-        <select name="location_province" id="location-province" class="location-province">
-          <option autofocus disabled>Province</option>
-          <option value="ON">Ontario</option>
-          <option value="BC">British Columbia</option>
-          <option value="AB">Alberta</option>
-          <option value="QB">Quebec</option>
-        </select>
-
         <label for="condition"></label>
-        <select name="condition" id="condition" class="condition">
+        <select name="condition" id="condition" class="condition" required>
           <option autofocus disabled>Condition</option>
           <option value="new">New</option>
           <option value="used">Used</option>
@@ -73,11 +62,23 @@
           <option value="poor">Poor</option>
         </select>
 
-        <!-- <label for="image"></label>
-        <input type="image" name="image" id="image"> -->
+        <label for="location-city"></label>
+        <input type="text" name="location_city" placeholder="City" id="location-city" required>
+
+        <label for="location-province"></label>
+        <select name="location_province" id="location-province" class="location-province" required>
+          <option autofocus disabled>Province</option>
+          <option value="ON">Ontario</option>
+          <option value="BC">British Columbia</option>
+          <option value="AB">Alberta</option>
+          <option value="QB">Quebec</option>
+        </select>
+
+        <label for="photo"></label>
+        <input type="url" name="photo" id="photo" placeholder="Image URL" required>
 
         <label for="description"></label>
-        <input type="text" name="description" placeholder="description"  id="description" required>
+        <input type="text" name="description" placeholder="Description"  id="description" required>
 
         <button type="submit" class="btn btn-primary">Sell Item</button>
       </form>
