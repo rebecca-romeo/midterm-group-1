@@ -29,3 +29,32 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.btn-primary {
+  background-color: #FAB005;
+  color: black;
+  &:hover {
+    background-color: #CAAF82;
+    color: black;
+  }
+}
+
+
+form {
+input {
+  border: 1.5px solid black;
+  border-radius: 1.1rem;
+  padding: 0.6rem;
+  width: 250px;
+  font-size: 1.5rem;
+}
+  ::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    opacity: 1;
+  }
+}
+
+h3 {
+  padding: 2rem 0;
+}
