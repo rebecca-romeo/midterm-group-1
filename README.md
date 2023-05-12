@@ -2,7 +2,7 @@
 
 # re-furnish
 
-**Where pre-loved furniture finds a new home!**
+_Where pre-loved furniture finds a new home!_
 
 re-furnish is a full stack, multi-page web application that allows users to post furniture that they want to sell and contact sellers for items they are interested in. Our website promotes sustainability and buying secondhand.
 
@@ -28,19 +28,19 @@ Users can view items on the homepage and filter them by price.
 
 Users can view an item's description and contact the seller.
 
-!["View item description and contact seller"](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/2%20-%20item%20description.png)
+!["View item description and contact seller."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/2%20-%20item%20description.png)
 
-Users can "like" items and refer to them later in the favourites page.
+Users can "like" items and refer to them later in the favorites page.
 
-![""](giflink)
+!["Like items and view it in favorites page."](giflink)
 
 Users can create a new listing to sell their items.
 
-![""](piclink)
+!["Create a new listing to sell an item."](piclink)
 
-Users can view their listings, Mark items as sold or unsold, or delete a listing.
+Users can view their listings, mark items as sold or unsold, or delete the listing from the site.
 
-![""](giflink)
+!["View listings to mark items as sold or unsold, or delete it from the site."](giflink)
 
 ## Getting Started
 
