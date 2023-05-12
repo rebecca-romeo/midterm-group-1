@@ -22,17 +22,25 @@ Admins:
 
 ## Final Product
 
-Users can view items on the homepage and filter them through
+Users can view items on the homepage and filter them by price.
 
-- see homepage + filter price // gif
-- item description page + email // picture
-- favourites + like + favorites page // gif
-- sell an item // picture
-- my listings page // gif
+!["View items on homepage and filter listings by price."](giflink)
 
-You can hover over the tweets and the flag, retweet, and like icons in the tweet box.
+Users can view an item's description and contact the seller.
 
-!["Hover over the tweet to see a box-shadow and color change for the icons."](https://github.com/Shamayal/tweeter/blob/master/docs/tweet-hover.gif)
+![""](piclink)
+
+Users can "like" items and refer to them later in the favourites page.
+
+![""](giflink)
+
+Users can create a new listing to sell their items.
+
+![""](piclink)
+
+Users can view their listings, Mark items as sold or unsold, or delete a listing.
+
+![""](giflink)
 
 ## Getting Started
 
