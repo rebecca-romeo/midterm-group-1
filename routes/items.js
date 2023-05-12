@@ -1,15 +1,26 @@
 const express = require('express');
 const router  = express.Router();
 const { getAllItems } = require('../db/queries/getAllItems');
+const { getFavs } = require('../db/queries/favorites');
 const { userItems } = require('../db/queries/userItems');
 const { deleteItem } = require('../db/queries/deleteItem');
 const { markSold } = require('../db/queries/markSold');
 const { markUnSold } = require('../db/queries/markUnSold');
 
 router.get('/', (req, res) => {
+  const user = req.session.user;
+
+  // when user not logged in, they see featured items but they can't like items
   getAllItems()
   .then((items) => {
-    res.json({items});
+    if (!user) {
+      res.json({items});
+      return;
+    }
+    getFavs(user)
+    .then((itemsFav) => {
+      res.json({items, itemsFav});
+    })
   })
   .catch((err) => {
     next(err);

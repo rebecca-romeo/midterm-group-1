@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getFavs, removeFav } = require('../db/queries/favorites');
+const { getFavs, removeFav, addFav } = require('../db/queries/favorites');
 
 router.get('/', (req, res) => {
   const user = req.session.user;
@@ -26,10 +26,11 @@ router.get('/', (req, res) => {
 router.post("/:id/delete", (req, res) => {
   const user = req.session.user;
   const item_id = req.params.id;
+  const templateVars = { user, title: 'Favorites', msg: 'delete a favorite' };
 
 // If user is not signed in, direct them to err page
   if (!user) {
-    return res.render('favs-signed-out-err', {user});
+    return res.render('signed-out-err', templateVars);
   }
 
   removeFav(user, item_id)
@@ -42,4 +43,25 @@ router.post("/:id/delete", (req, res) => {
   .catch(err => res.json(err));
 
 });
+
+router.post("/add/:id", (req, res) => {
+  const user = req.session.user;
+  const item_id = req.params.id;
+  const templateVars = { user, title: 'Favorites', msg: 'favorite an item' };
+
+
+// If user is not signed in, direct them to err page
+  if (!user) {
+    return res.render('signed-out-err', templateVars);
+  }
+
+  addFav(user, item_id)
+  .then(() => {
+    console.log()
+    res.sendStatus(204);
+  })
+  .catch(err => res.json(err));
+
+});
+
 module.exports = router;
