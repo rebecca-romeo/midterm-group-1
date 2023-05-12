@@ -1,7 +1,6 @@
 const db = require('../connection.js');
 
-//To update the available item for a particular login user, treat as a delete
-//since fetching only avaialble items
+// Select information from the messages db according to the conversation id
 const getMessages = () => {
   return db
     .query(`

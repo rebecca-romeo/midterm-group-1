@@ -1,19 +1,21 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const { getUserByEmail } = require('../db/queries/login');
 
-
-
+// GET route for /login
+// displays the login form
 router.get('/login', (req, res) => {
   if (req.session.user) {
     res.redirect('/home');
-    return
+    return;
   }
-  const templateVars = { user: req.session.user }
-  res.render('login', templateVars)
-})
+  const templateVars = { user: req.session.user };
+  res.render('login', templateVars);
+});
 
-
+// POST route /login
+// takes the user input from the form, and submits the data
+// checks if the user email and pw match the db info
 router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -38,6 +40,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+// clear user cookie on logout
 router.get('/logout', (req, res) => {
   req.session = null;
   res.redirect('/auth/login');

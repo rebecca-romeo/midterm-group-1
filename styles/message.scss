@@ -3,11 +3,9 @@ main {
   justify-content: center;
   align-items: center;
   padding: 5rem 0;
-  // height: 70vh;
 }
 
 .message-container {
-  // min-height: 60vh;
   overflow: auto;
   border: 2px solid black;
   width: 80%;
@@ -16,8 +14,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 0 2rem 4rem;
-  // align-items: center;
-  // margin-top: 15rem;
 }
 
 .individual-message {

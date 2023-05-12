@@ -1,3 +1,4 @@
+// typewriter effect for text on top of banner image
 var app = document.getElementById("typewriter");
 
 const typed = new Typewriter('#typewriter', {
@@ -23,7 +24,8 @@ typed
   .pauseFor(5000)
   .start();
 
-
+// adds a new item on homepage
+// if user is logged in and has favourited the item, it will have a red heart
 const createItemComponent = (item, itemsFavId) => {
   return $(`<article onclick="fetchItem(${item.id})" class="item_listing btn">
   <section class="item_listing_header">
@@ -47,6 +49,7 @@ const createItemComponent = (item, itemsFavId) => {
 
 }
 
+// tells user if the item is sold
 const soldBanner = (status_sold) => {
   if (status_sold) {
     return `<div class="sold_banner">
@@ -60,6 +63,7 @@ const soldBanner = (status_sold) => {
   }
 }
 
+// if item is sold, the picture will be slightly transparent
 const imageOpacity = (status_sold) => {
   if (status_sold) {
     return `<div class="img_container">
@@ -72,6 +76,7 @@ const imageOpacity = (status_sold) => {
   }
 }
 
+// icons to be displayed beside item name based on category
 const categoryIcon = (category) => {
   if (category === "office") {
     return `<i class="fa-solid fa-desktop"></i>`
@@ -88,6 +93,7 @@ const categoryIcon = (category) => {
   }
 }
 
+// loops through list of items from database and creates a new article element which is prepended to the item-listings class
 const renderFeaturedItems = (items, itemsFavId) => {
   for (item of items) {
     const $itemComponent = createItemComponent(item, itemsFavId)
@@ -95,19 +101,23 @@ const renderFeaturedItems = (items, itemsFavId) => {
   }
 }
 
+// defined a new variable to pass through Ajax request in jQuery function
 let featuredItems;
 
+// filter price search button which defines the min and max values
 document.getElementById('priceFilter').addEventListener('submit', function(event) {
   event.preventDefault();
 
   let minPrice = parseInt(document.getElementById('minPrice').value);
   let maxPrice = parseInt(document.getElementById('maxPrice').value);
 
+  // empties the item_listings class and instead renders the new list of items that fit the price range
   const filteredList = filterPrice(minPrice, maxPrice, featuredItems);
   $(".item_listings").empty();
   renderFeaturedItems(filteredList);
 });
 
+// returns a new list of items that fit the price range
 const filterPrice = (minPrice, maxPrice, items) => {
 
   let filteredList = items.filter(function(item) {
@@ -122,7 +132,9 @@ $(document).ready(function () {
     url: "/items",
     type: "application/json",
     success: function(data) {
+      // assigned variable to featuredItems which
       featuredItems = data.items
+      // populates an array of item ids that are favourited by user
       const itemsFavId = [];
       if (data.itemsFav) {
         for (const favs of data.itemsFav) {
@@ -130,12 +142,15 @@ $(document).ready(function () {
         }
 
       }
+      // use the display-email class from nav bar to identify user
       const user = $('.display-email')
 
+      // if user is logged in, they are able to favourite items
       renderFeaturedItems(featuredItems, itemsFavId);
       if (user) {
         const heart = $('.heart');
 
+        // once item is favourited, the user can no longer click on it
         heart.on("click", function(event) {
           event.stopPropagation();
           const heart = $(this);

@@ -1,6 +1,6 @@
 const db = require('../connection.js');
 
-//To fetch the available  items for a particular login user
+// fetches all the available items for a particular logged in user
 const userItems = (user) => {
   return db
     .query(`

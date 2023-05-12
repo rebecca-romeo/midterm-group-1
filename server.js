@@ -40,12 +40,9 @@ const authRoutes = require('./routes/auth');
 const favoritesRoutes = require('./routes/favorites');
 const sellItemRoute = require('./routes/sell-item');
 const messageRoute = require('./routes/message');
-const { getFavs } = require('./db/queries/favorites');
-
-
 const itemRoutes = require('./routes/items');
 const itemPageRoutes = require('./routes/item');
-const { getMessages } = require('./db/queries/messages');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -58,10 +55,6 @@ app.use('/favorites', favoritesRoutes);
 app.use('/auth', authRoutes);
 app.use('/sell', sellItemRoute);
 app.use('/message', messageRoute);
-
-
-
-
 app.use('/items', itemRoutes);
 app.use('/item', itemPageRoutes)
 // Note: mount other resources here, using the same pattern above
@@ -69,16 +62,6 @@ app.use('/item', itemPageRoutes)
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-app.get('/supertest', (req, res) => {
-  // getFavs()
-  // .then(result => res.json(result))
-  // .catch(err => res.json(err))
-
-  getMessages()
-  .then(result => res.json(result))
-  .catch(err => res.json(err))
-});
 
 app.get('/home', (req, res) => {
   const templateVars = { user: req.session.user }

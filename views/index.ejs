@@ -33,18 +33,20 @@
   <link rel="stylesheet" href="/styles/login.css" />
   <link rel="stylesheet" href="/styles/footer.css" />
 
-
-
   <!-- font icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Roboto:wght@300;700&display=swap"
+    rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true">
+  <link rel="icon"
+    href="https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true">
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -52,7 +54,7 @@
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script>
     function fetchItem(item) {
-      window.location.href=`/item/${item}`
+      window.location.href = `/item/${item}`
     }
   </script>
 </head>
@@ -60,54 +62,37 @@
 <body>
   <%- include('partials/nav') %>
 
+    <!-- Typewriter effect -->
     <header>
       <div id="typewriter"></div>
     </header>
 
-<main class="wrapper home_page">
-  <h2>Featured Items</h2>
-  <!-- Filter Feature -->
-  <div class="filter">
-    <h4>Filter Items By Price Range</h4>
-    <form  id="priceFilter" method="POST" action="">
-      <div class="filter-form">
-        <label for="minPrice">From</label>
-        <input
-          class="form-input"
-          type="number"
-          id="minPrice"
-          name="minPrice"
-          min="0"
-          placeholder="$"
-        />
-        <label for="maxPrice">to</label>
-        <input
-          class="form-input"
-          type="number"
-          id="maxPrice"
-          name="maxPrice"
-          min="0"
-          placeholder="$"
-        />
+    <main class="wrapper home_page">
+      <h2>Featured Items</h2>
+      <!-- Price Filter Feature -->
+      <div class="filter">
+        <h4>Filter Items By Price Range</h4>
+        <form id="priceFilter" method="POST" action="">
+          <div class="filter-form">
+            <label for="minPrice">From</label>
+            <input class="form-input" type="number" id="minPrice" name="minPrice" min="0" placeholder="$" />
+            <label for="maxPrice">to</label>
+            <input class="form-input" type="number" id="maxPrice" name="maxPrice" min="0" placeholder="$" />
+          </div>
+          <button type="submit" class="btn btn-secondary">Search</button>
+        </form>
       </div>
-      <button type="submit" class="btn btn-secondary">Search</button>
-    </form>
-  </div>
 
+      <div class="items_container">
+        <section class="item_listings">
+        </section>
+      </div>
 
+    </main>
 
+    <%- include('footer'); -%>
 
-
-    <div class="items_container">
-      <section class="item_listings">
-      </section>
-    </div>
-
-  </main>
-
-  <%- include('footer'); -%>
-
-  <script type="text/javascript" src="/scripts/index.js"></script>
+      <script type="text/javascript" src="/scripts/index.js"></script>
 
 </body>
 
