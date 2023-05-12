@@ -2,13 +2,10 @@
   <div class="wrapper">
 
     <div class="nav-logo-search-container">
-
       <a href="/home" class="logo">re-furnish</a>
       <% if(user) { %>
         <p class="display-email"><%= user %></p>
         <% } %>
-
-
     </div>
 
     <div class="nav-icons-buttons-container">
@@ -25,7 +22,6 @@
           </ul>
       </div>
 
-
       <a href="/auth/logout" class="btn btn-primary logout">logout</a>
     <% }%>
 
@@ -37,5 +33,6 @@
 
     </div>
   </div>
+  <script defer src="/scripts/header.js"></script>
 
 </nav>

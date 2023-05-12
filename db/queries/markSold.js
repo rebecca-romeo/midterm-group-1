@@ -1,6 +1,6 @@
 const db = require('../connection.js');
 
-//update the sold status of a item for a particular login user
+// updates the status of an unsold item to sold for a particular logged in user
 const markSold = (itemId) => {
   return db
     .query(`

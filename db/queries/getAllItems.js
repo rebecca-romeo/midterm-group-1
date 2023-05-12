@@ -1,5 +1,6 @@
 const db = require('../connection.js');
 
+// returns all of the items posted by sellers
 const getAllItems = () => {
   return db
     .query(`

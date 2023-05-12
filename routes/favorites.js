@@ -4,10 +4,10 @@ const { getFavs, removeFav, addFav } = require('../db/queries/favorites');
 
 router.get('/', (req, res) => {
   const user = req.session.user;
-  const templateVars = { user, title: 'Favorite Items', msg: 'view your favorites' }
+  const templateVars = { user, title: 'Favorite Items', msg: 'view your favorites' };
 
   if (!user) {
-    res.render('signed-out-err', templateVars)
+    res.render('signed-out-err', templateVars);
   }
 
   // DB is queried by calling the getFavs fn, returns data related to favorite items
@@ -20,47 +20,43 @@ router.get('/', (req, res) => {
     .catch(err => res.json(err));
 });
 
-
 // POST /favourites/:id/delete
-// delete row
+// deletes a favorite item
 router.post("/:id/delete", (req, res) => {
   const user = req.session.user;
   const item_id = req.params.id;
   const templateVars = { user, title: 'Favorites', msg: 'delete a favorite' };
 
-// If user is not signed in, direct them to err page
+  // If user is not signed in, direct them to err page
   if (!user) {
     return res.render('signed-out-err', templateVars);
   }
 
+  // delete a user's favorite from the database and page using the removeFav fn
   removeFav(user, item_id)
-  .then(() => {
-
-    // res.status(200).send("OK");
-    res.redirect('/favorites');
-
-  })
-  .catch(err => res.json(err));
-
+    .then(() => {
+      res.redirect('/favorites');
+    })
+    .catch(err => res.json(err));
 });
 
+// Adds an item to favorites
 router.post("/add/:id", (req, res) => {
   const user = req.session.user;
   const item_id = req.params.id;
   const templateVars = { user, title: 'Favorites', msg: 'favorite an item' };
 
 
-// If user is not signed in, direct them to err page
+  // If user is not signed in, direct them to err page
   if (!user) {
     return res.render('signed-out-err', templateVars);
   }
 
   addFav(user, item_id)
-  .then(() => {
-    console.log()
-    res.sendStatus(204);
-  })
-  .catch(err => res.json(err));
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch(err => res.json(err));
 
 });
 

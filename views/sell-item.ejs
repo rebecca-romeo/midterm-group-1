@@ -23,6 +23,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;600&display=swap"
     rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon"
+    href="https://github.com/rebecca-romeo/midterm-group-1/blob/homepage/docs/re-furnish_logo.png?raw=true">
+
   <!-- Stylesheets  -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -31,8 +35,9 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/login.css" />
   <link rel="stylesheet" href="/styles/sell.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
 
-
+  <!-- Scripts -->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
@@ -47,42 +52,71 @@
       <h3>Create a new listing</h3>
 
       <form action="/sell/item" method="POST" class="sell-item-form" id="sell-item-form">
-        <label for="title"></label>
-        <input type="text" name="title" placeholder="Title" id="title" required>
+        <div class="form-container">
+          <label for="title"></label>
 
-        <label for="price"></label>
-        <input type="number" name="price" placeholder="$0" id="price" min="0" required>
+          <!-- Item title -->
+          <input type="text" name="title" placeholder="Title" id="title" required>
 
-        <label for="condition"></label>
-        <select name="condition" id="condition" class="condition" required>
-          <option autofocus disabled>Condition</option>
-          <option value="new">New</option>
-          <option value="used">Used</option>
-          <option value="good">Good</option>
-          <option value="poor">Poor</option>
-        </select>
+          <!-- Item price -->
+          <label for="price"></label>
+          <input type="number" name="price" placeholder="$0" id="price" min="0" required>
 
+          <!-- Item condition -->
+          <label for="condition"></label>
+          <select name="condition" id="condition" class="condition" required>
+            <option autofocus disabled>Condition</option>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            <option value="good">Good</option>
+            <option value="poor">Poor</option>
+          </select>
+
+          <!-- Item category -->
+          <label for="category"></label>
+          <select name="category" id="category" class="category" required>
+            <option autofocus disabled>Category</option>
+            <option value="office">Office</option>
+            <option value="living room">Living Room</option>
+            <option value="bedroom">Bedroom</option>
+            <option value="dining room">Dining Room</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="decor">Decor</option>
+          </select>
+        </div>
+
+        <!-- City -->
         <label for="location-city"></label>
         <input type="text" name="location_city" placeholder="City" id="location-city" required>
 
+        <!-- Province -->
         <label for="location-province"></label>
         <select name="location_province" id="location-province" class="location-province" required>
           <option autofocus disabled>Province</option>
-          <option value="ON">Ontario</option>
-          <option value="BC">British Columbia</option>
           <option value="AB">Alberta</option>
-          <option value="QB">Quebec</option>
+          <option value="BC">British Columbia</option>
+          <option value="MB">Manitoba</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="ON">Ontario</option>
+          <option value="PE">PEI</option>
+          <option value="QC">Quebec</option>
+          <option value="SK">Saskatchewan</option>
         </select>
 
+        <!-- Photo URL -->
         <label for="photo"></label>
         <input type="url" name="photo" id="photo" placeholder="Image URL" required>
 
+        <!-- Item description -->
         <label for="description"></label>
-        <input type="text" name="description" placeholder="Description"  id="description" required>
+        <input type="text" name="description" placeholder="Description" id="description" required>
 
         <button type="submit" class="btn btn-primary">Sell Item</button>
       </form>
     </div>
+    <%- include('footer'); -%>
 </body>
 
 </html>
