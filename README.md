@@ -1,12 +1,14 @@
 # re-furnish
 
+!["re-furnish logo."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/re-furnish_logo.png)
+
 _Where pre-loved furniture finds a new home!_
 
-re-furnish is a full stack, multi-page web application that allows users to post furniture that they want to sell and contact sellers for items they are interested in. Our website promotes sustainability and buying secondhand.
+re-furnish is a full stack, multi-page web application that allows users to post furniture that they want to sell and contact sellers for items they are interested in. Our company aims to promote sustainability and buying secondhand by offering affordable and local options for our customers
 
 Users:
 
-- can see list of featured items on home page
+- can browse a list of featured furniture on the home page
 - can filter items by a price range
 - can "like" items to refer to later
 - can send an email to the seller for an item listed
