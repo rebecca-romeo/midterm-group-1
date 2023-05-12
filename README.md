@@ -24,7 +24,7 @@ Admins:
 
 Users can view items on the homepage and filter them by price.
 
-!["View items on homepage and filter listings by price."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/1%20-%20homepage%20and%20filter%20feature.mov.gif)
+!["View items on homepage and filter listings by price."](link)
 
 Users can view an item's description and contact the seller.
 
