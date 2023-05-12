@@ -1,5 +1,3 @@
-# LHL Node Skeleton
-
 # re-furnish
 
 _Where pre-loved furniture finds a new home!_
