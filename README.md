@@ -58,7 +58,7 @@ Users can view their listings, mark items as sold or unsold, or delete the listi
 
 - Note: nodemon is used, so you should not have to restart your server
 
-8. Visit `http://localhost:8080/`
+8. Visit `http://localhost:8080/home`
 
 ## Warnings & Tips
 
