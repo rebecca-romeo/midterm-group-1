@@ -24,11 +24,11 @@ Admins:
 
 Users can view items on the homepage and filter them by price.
 
-!["View items on homepage and filter listings by price."](giflink)
+!["View items on homepage and filter listings by price."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/1%20-%20homepage%20and%20filter%20feature.mov.gif)
 
 Users can view an item's description and contact the seller.
 
-![""](piclink)
+!["View item description and contact seller"](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/2%20-%20item%20description.png)
 
 Users can "like" items and refer to them later in the favourites page.
 
