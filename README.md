@@ -32,15 +32,15 @@ Users can view an item's description and contact the seller.
 
 Users can "like" items and refer to them later in the favorites page.
 
-!["Like items and view it in favorites page."](giflink)
+!["Like items and view it in favorites page."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/3%20-%20add%20item%20to%20favorites.gif)
 
 Users can create a new listing to sell their items.
 
-!["Create a new listing to sell an item."](piclink)
+!["Create a new listing to sell an item."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/4%20-%20create%20a%20new%20listing.png)
 
 Users can view their listings, mark items as sold or unsold, or delete the listing from the site.
 
-!["View listings to mark items as sold or unsold, or delete it from the site."](giflink)
+!["View listings to mark items as sold or unsold, or delete it from the site."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/5%20-%20listings%20page%20features.gif)
 
 ## Getting Started
 
