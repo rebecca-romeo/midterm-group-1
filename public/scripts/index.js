@@ -130,11 +130,10 @@ $(document).ready(function () {
         }
 
       }
-      // get user from nav bar like const user = $('.')
-      // if user is there, replace 138 with user condition
+      const user = $('.display-email')
 
       renderFeaturedItems(featuredItems, itemsFavId);
-      if (itemsFavId && itemsFavId.length > 0) {
+      if (user) {
         const heart = $('.heart');
 
         heart.on("click", function(event) {
