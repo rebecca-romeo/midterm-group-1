@@ -1,6 +1,5 @@
 # re-furnish
 
-!["re-furnish logo."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/re-furnish_logo.png)
 
 _Where pre-loved furniture finds a new home!_
 
