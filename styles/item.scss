@@ -1,12 +1,9 @@
 $font-family: 'Roboto', sans-serif;
 $font-title: 'Caveat', cursive;
-$font-color: #643F0C;
+$font-color: #000;
 
 header {
   font-family: $font-title;
-}
-body {
-  background-image: linear-gradient(white 50%, #f4d79a);
 }
 
 .item_box {
@@ -14,7 +11,8 @@ body {
   flex-direction: column;
   margin: 10vh auto;
   padding: 5rem;
-  background-color: #C8D35B;
+  background-color: #F7F7F7;
+  border: 1px solid rgb(148, 145, 145);
   border-radius: 40px;
   .item_box_top {
     display: flex;
@@ -40,12 +38,12 @@ body {
       }
       .item-price {
         max-width: 95px;
-        color: white;
+        color: #000;
         padding-top: 0.2em;
         padding-bottom: 0.2em;
         padding-right: 0.4em;
         padding-left: 0.4em;
-        background-color: #A3663E;
+        background-color: #FAB005;
         border-radius: 10px;
         margin: 0.5em;
       }
@@ -60,7 +58,7 @@ body {
         }
       }
       .category {
-        color: #643F0C;
+        color: #000;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -80,6 +78,9 @@ body {
         margin-bottom: 0.5em;
         max-width: 200px;
         padding: 1.5rem;
+        &:hover {
+          transform: scale(1.05);
+        }
       }
       .sold {
         color: #A40808;

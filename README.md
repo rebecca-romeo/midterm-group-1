@@ -27,7 +27,7 @@ Users can view items on the homepage and filter them by price.
 
 Users can view an item's description and contact the seller.
 
-!["View item description and contact seller."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/2%20-%20item%20description.png)
+!["View item description and contact seller."](https://github.com/rebecca-romeo/midterm-group-1/blob/master/docs/2%20-%20item%20description.gif)
 
 Users can "like" items and refer to them later in the favorites page.
 

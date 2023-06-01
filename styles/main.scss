@@ -1,11 +1,7 @@
 
 $font-family: 'Roboto', sans-serif;
 $font-title: 'Caveat', cursive;
-$font-color: #643F0C;
-
-body {
-  background-image: linear-gradient(white 50%, #f4d79a);
-}
+$font-color: #000;
 
 header {
   background-image: url(https://images.unsplash.com/photo-1634547476021-c1155c01616c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80);
@@ -48,7 +44,7 @@ h1 {
 }
 
 .item_listing:hover {
-  box-shadow: 10px 10px 10px $font-color;
+  transform: scale(1.05);
 }
 
 main {
@@ -62,7 +58,8 @@ main {
   width: 30%;
   margin: 2rem 1rem;
   max-height: 500px;
-  background-color: rgba(163, 183, 105);
+  background-color: #F7F7F7;
+  border: 1px solid rgb(148, 145, 145);
   border-radius: 40px;
   .item_listing_header {
     position: relative;
@@ -101,14 +98,14 @@ main {
     justify-content: flex-end;
     justify-content: space-between;
     .item_price {
-      color: white;
+      color: black;
       font-size: x-large;
       letter-spacing: 0.2rem;
       padding-top: 0.2em;
       padding-bottom: 0.2em;
       padding-right: 0.4em;
       padding-left: 0.4em;
-      background-color: #A3663E;
+      background-color: #FAB005;;
       border-radius: 10px;
       margin: 0.5em;
     }
@@ -121,9 +118,7 @@ main {
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      // align-items: flex-end;
       margin-right: 10px;
-      // margin-bottom: 3px;
       color: $font-color;
     }
     h5,h6 {
